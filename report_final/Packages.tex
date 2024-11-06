@@ -1,0 +1,87 @@
+\usepackage{listings}
+\usepackage{float}
+\usepackage[section]{placeins} % usef \FloatBarrier to prevent images from appearing on next page
+\usepackage{array}
+\usepackage{color}
+\usepackage[titletoc,title]{appendix}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\def\doubleunderline#1{\underline{\underline{#1}}}
+\usepackage{fancyref}
+\usepackage{ulem}
+\usepackage{dsfont}
+\usepackage{graphicx,wrapfig,lipsum}
+\usepackage{scrextend}
+\usepackage{epstopdf}
+\usepackage{blindtext}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{subfiles}
+\usepackage[T1]{fontenc}
+\usepackage{gensymb}
+\usepackage{multicol}
+\usepackage[utf8]{inputenc}
+\usepackage{wrapfig}
+
+% packages for margins ��
+\usepackage[margin = 1.0 in]{geometry}
+\renewcommand{\baselinestretch}{1.25}
+\usepackage{commath}
+%added in for bibliography and citations
+\usepackage[
+    backend=biber,
+    style=chem-angew,
+  ]{biblatex}
+
+% hyperlinks
+\usepackage{hyperref}
+
+
+% Table formatting
+\usepackage{graphicx}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{booktabs}
+\usepackage{xcolor,colortbl,minted,enumitem,comment,fancyhdr,array,graphicx,geometry,float,hyperref,amssymb,lastpage,pdfpages,nameref,titlesec,caption,svg,listings,multirow,tikz,tikz-among-us,blindtext,multicol,csquotes,subcaption}
+\usepackage[english]{babel}
+\usepackage[annataritalic]{tengwarscript}
+\usepackage{pdflscape}
+
+\definecolor{corpoRed}{rgb}{153,0,0}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\hypersetup{
+    colorlinks = true,
+    linkcolor = black,
+    filecolor = cyan,
+    urlcolor = corpoRed,
+    citecolor = black
+}

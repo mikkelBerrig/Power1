@@ -1,0 +1,25 @@
+\documentclass[12pt]{article}
+\newcommand{\srcpath}{./report_final}
+
+\input{\srcpath/Packages}
+
+\newcommand{\projectTitle}{Mini Rapport 4 - Controller}
+\pagestyle{fancy}
+\fancyhf{}
+\headheight = 22Pt
+\rhead{\hypersetup{linkcolor=black,} Page \thepage \hspace{1ex}of \pageref{LastPage} } 
+\lhead{\includegraphics[height=6mm]{\srcpath/Pictures/DTU_Logo.png} \hspace{2mm}  \projectTitle \hspace{1mm} }
+\addbibresource{ref.bib}
+\setcounter{secnumdepth}{0}
+
+\begin{document}
+
+\input{\srcpath/Sections/FrontPage}
+\newpage
+\input{\srcpath/Sections/Intro}
+\newpage
+\input{\srcpath/Sections/Current}
+\newpage
+\input{\srcpath/Sections/typeii}
+
+\end{document}

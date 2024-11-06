@@ -6,6 +6,8 @@
 /**/*.gcda
 /**/.DS_store
 *.aux
+*.bcf
+*.xml
 *.pdf
 *.log
 *.out
