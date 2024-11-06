@@ -1,0 +1,16 @@
+/**/.*.swp
+/**/*.out
+/**/*.d
+/**/*.o
+/**/*.gcno
+/**/*.gcda
+/**/.DS_store
+*.aux
+*.pdf
+*.log
+*.out
+/**/*.*.orig
+/**/*.asv
+/matlab/*.wav
+/**/*.zip
+*.sh
