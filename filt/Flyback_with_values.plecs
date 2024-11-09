@@ -53,9 +53,9 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 28; 1920, 999]
+    Location      [0, 183; 1150, 870]
     ZoomFactor    1.77778
-    SliderPosition [0, 0]
+    SliderPosition [406, 134]
     ShowBrowser   on
     BrowserWidth  281
     Component {
@@ -158,7 +158,7 @@ Plecs {
       LabelPosition east
       Parameter {
         Variable      "V"
-        Value         "1"
+        Value         "13.16"
         Show          off
       }
     }
@@ -172,7 +172,7 @@ Plecs {
       LabelPosition west
       Parameter {
         Variable      "L"
-        Value         "119e-6"
+        Value         "2.6195e-5"
         Show          on
       }
       Parameter {
@@ -274,7 +274,7 @@ Plecs {
       }
       Parameter {
         Variable      "DutyCycle"
-        Value         "0.439"
+        Value         "0.5"
         Show          on
       }
       Parameter {
@@ -342,7 +342,7 @@ Plecs {
       LabelPosition west
       Parameter {
         Variable      "C"
-        Value         "1.25e-6"
+        Value         "120e-6"
         Show          on
       }
       Parameter {
@@ -363,6 +363,80 @@ Plecs {
         Variable      "R"
         Value         "7.5"
         Show          on
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope"
+      Show          on
+      Position      [685, 420]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [520, 298; 1097, 781]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAJBAAAAafw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAAkEAAABCAP///wAAAkEAAAFdAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL8AMAAAAGAAAAB"
+"wAAAGQAAAAGAAAAZAAAAAUAAABkAAAABAAAAGQAAAAJAAAAZAAAAAgAAABkAAACQQAAAAsBAAABAA"
+"AAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAAAAQAAAAAAAABkAAAAAQAAAAAAAABkAAA"
+"AAQAAAAAAAABkAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAABgAAAAAQAAAAAAAAPoAAAAABM="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency / Hz"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Output"
+      Show          on
+      Position      [620, 420]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "R2"
+        Path          ""
+        Signals       {"Resistor voltage", "Resistor current"}
       }
     }
     Connection {
@@ -506,6 +580,13 @@ Plecs {
         DstComponent  "R2"
         DstTerminal   2
       }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Output"
+      SrcTerminal   1
+      DstComponent  "Scope"
+      DstTerminal   1
     }
   }
   Analysis {
