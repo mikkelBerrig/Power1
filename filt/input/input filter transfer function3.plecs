@@ -1,5 +1,5 @@
 Plecs {
-  Name          "input filter transfer function2"
+  Name          "input filter transfer function3"
   Version       "4.8"
   CircuitModel  "ContStateSpace"
   StartTime     "0.0"
@@ -68,7 +68,7 @@ Plecs {
       LabelPosition north
       Parameter {
         Variable      "L"
-        Value         "108e-6"
+        Value         "110e-6"
         Show          on
       }
       Parameter {
@@ -87,63 +87,11 @@ Plecs {
       LabelPosition west
       Parameter {
         Variable      "C"
-        Value         "500e-6"
+        Value         "30e-6"
         Show          on
       }
       Parameter {
         Variable      "v_init"
-        Value         "0"
-        Show          off
-      }
-    }
-    Component {
-      Type          Capacitor
-      Name          "C2"
-      Show          on
-      Position      [360, 275]
-      Direction     down
-      Flipped       on
-      LabelPosition west
-      Parameter {
-        Variable      "C"
-        Value         "4.5e-3"
-        Show          on
-      }
-      Parameter {
-        Variable      "v_init"
-        Value         "0"
-        Show          off
-      }
-    }
-    Component {
-      Type          Resistor
-      Name          "R1"
-      Show          on
-      Position      [175, 155]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Parameter {
-        Variable      "R"
-        Value         "0.3"
-        Show          on
-      }
-    }
-    Component {
-      Type          Inductor
-      Name          "L2"
-      Show          on
-      Position      [300, 225]
-      Direction     left
-      Flipped       off
-      LabelPosition north
-      Parameter {
-        Variable      "L"
-        Value         "12e-6"
-        Show          on
-      }
-      Parameter {
-        Variable      "i_init"
         Value         "0"
         Show          off
       }
@@ -209,26 +157,37 @@ Plecs {
       Flipped       off
       LabelPosition west
     }
-    Connection {
-      Type          Wire
-      SrcComponent  "L1"
-      SrcTerminal   2
-      Points        [215, 225]
-      Branch {
-        Points        [230, 225]
-        Branch {
-          DstComponent  "C1"
-          DstTerminal   1
-        }
-        Branch {
-          DstComponent  "L2"
-          DstTerminal   1
-        }
+    Component {
+      Type          Resistor
+      Name          "R1"
+      Show          on
+      Position      [330, 250]
+      Direction     up
+      Flipped       off
+      LabelPosition east
+      Parameter {
+        Variable      "R"
+        Value         "1"
+        Show          on
       }
-      Branch {
-        Points        [215, 155]
-        DstComponent  "R1"
-        DstTerminal   1
+    }
+    Component {
+      Type          Capacitor
+      Name          "C2"
+      Show          on
+      Position      [330, 285]
+      Direction     down
+      Flipped       on
+      LabelPosition west
+      Parameter {
+        Variable      "C"
+        Value         "100e-6"
+        Show          on
+      }
+      Parameter {
+        Variable      "v_init"
+        Value         "0"
+        Show          off
       }
     }
     Connection {
@@ -239,45 +198,6 @@ Plecs {
       DstTerminal   3
     }
     Connection {
-      Type          Wire
-      SrcComponent  "L1"
-      SrcTerminal   1
-      Points        [145, 225]
-      Branch {
-        Points        [145, 155]
-        DstComponent  "R1"
-        DstTerminal   2
-      }
-      Branch {
-        Points        [120, 225]
-        DstComponent  "V"
-        DstTerminal   1
-      }
-    }
-    Connection {
-      Type          Wire
-      SrcComponent  "C1"
-      SrcTerminal   2
-      Points        [230, 310]
-      Branch {
-        Points        [360, 310]
-        Branch {
-          DstComponent  "C2"
-          DstTerminal   2
-        }
-        Branch {
-          Points        [420, 310]
-          DstComponent  "Vm"
-          DstTerminal   2
-        }
-      }
-      Branch {
-        Points        [120, 310]
-        DstComponent  "V"
-        DstTerminal   2
-      }
-    }
-    Connection {
       Type          Signal
       SrcComponent  "Vm"
       SrcTerminal   3
@@ -286,18 +206,63 @@ Plecs {
     }
     Connection {
       Type          Wire
-      SrcComponent  "C2"
-      SrcTerminal   1
-      Points        [360, 225]
+      SrcComponent  "C1"
+      SrcTerminal   2
+      Points        [230, 310]
       Branch {
-        DstComponent  "L2"
+        Points        [120, 310]
+        DstComponent  "V"
         DstTerminal   2
       }
       Branch {
-        Points        [420, 225]
-        DstComponent  "Vm"
+        Points        [330, 310]
+        Branch {
+          Points        [420, 310]
+          DstComponent  "Vm"
+          DstTerminal   2
+        }
+        Branch {
+          DstComponent  "C2"
+          DstTerminal   2
+        }
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "L1"
+      SrcTerminal   1
+      Points        [120, 225]
+      DstComponent  "V"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "L1"
+      SrcTerminal   2
+      Points        [230, 225]
+      Branch {
+        DstComponent  "C1"
         DstTerminal   1
       }
+      Branch {
+        Points        [330, 225]
+        Branch {
+          Points        [420, 225]
+          DstComponent  "Vm"
+          DstTerminal   1
+        }
+        Branch {
+          DstComponent  "R1"
+          DstTerminal   1
+        }
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "C2"
+      SrcTerminal   1
+      DstComponent  "R1"
+      DstTerminal   2
     }
   }
   Analysis {
