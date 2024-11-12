@@ -30,9 +30,9 @@ Since we will be using the TL431 as the current mode controller, the reference v
 \]
 as
 \[
-R_b = \frac{V_{ref}\cdot R_1}{V_o - V_{ref}} = 2k\Omega
+R_b = \frac{V_{ref}\cdot R_1}{V_o - V_{ref}} = 2\text{k}\Omega
 \]
-Thus: $R_1 = 10k\Omega$ and $R_b = 2k\Omega$
+Thus: $R_1 = 10\text{k}\Omega$ and $R_b = 2\text{k}\Omega$
 %\subsection{Loop gain phase bode plot}
 
 \subsection{Cross over frequency}
@@ -44,11 +44,11 @@ R5= \frac{V_o - V_f - V{k,min}}{I_k}
 \]
 Here $V_f$, $V_{k,min}$ and $I_k$ are given by the TL431, so R5 becomes:
 \[
-R5 = \frac{15V - 1.05V - 2.5V}{0.002A} = 5.725 k\Omega
+R5 = \frac{15\text{V} - 1.05\text{V} - 2.5\text{V}}{0.002\text{A}} = 5.725 \text{k}\Omega
 \]
 Then R4 can be found via the following with CTR being 1 at our operation point:% TODO find arguments that this is in fact our operation point
 \[
-R4 = \frac{kp \cdot R5}{CTR} = 45.726k\Omega
+R4 = \frac{kp \cdot R5}{CTR} = 45.73\text{k}\Omega
 \]
 \subsection{C1}
 C1 is found via:
@@ -57,7 +57,7 @@ C1=\frac{1}{2\cdot\pi\cdot f_z \cdot R1}
 \]
 $f_z$ is set to be $\frac{1}{5}$ of the crossover frequency, this in turn gives us a value for C1:
 \[
-C1 = \frac{1}{2\cdot\pi\cdot \frac{f_c}{5} \cdot 10k\Omega} = 3.1831 nF
+C1 = \frac{1}{2\cdot\pi\cdot \frac{f_c}{5} \cdot 10\text{k}\Omega} = 3.1831 \text{nF}
 \]
 \subsection{C3}
 C3 is like wise found by:
@@ -66,7 +66,7 @@ C3 = \frac{1}{2\cdot\pi\cdot f_p \cdot R4}
 \]
 where $f_p$ is set to be 7 times higher than the crossover frequency, so:
 \[
-C3 = \frac{1}{2\cdot\pi\cdot (7f_c) \cdot 5.692k\Omega}=99.4 pF
+C3 = \frac{1}{2\cdot\pi\cdot (7f_c) \cdot 5.692\text{k}\Omega}=99.4 \text{pF}
 \]
 Initially $f_p$ was set 5 times higher than the crossover frequency, however to increase the gain margin the pole had to be pushed to a higher frequency.
 
